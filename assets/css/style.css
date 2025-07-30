@@ -9,3 +9,81 @@
 a {
     text-decoration: none;
 }
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #131313;
+}
+
+ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1em;
+}
+
+ul li a {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background: #fff;
+    text-align: center;
+    font-size: 45px;
+    display: block;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    z-index: 1;
+}
+
+ul li a i {
+    position: relative;
+    color: #262626;
+    transition: 0.5s;
+    z-index: 3;
+}
+
+ul li a:hover i {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+ul li a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+ul li a:hover::before {
+    top: 0;
+}
+
+ul li:nth-child(1) a::before {
+    background: #3b5999;
+}
+ul li:nth-child(2) a::before {
+    background: #e22a2a;
+}
+ul li:nth-child(3) a::before {
+    background: #e95718;
+}
+ul li:nth-child(4) a::before {
+    background: #55acee;
+}
+ul li:nth-child(5) a::before {
+    background: #db5eec;
+}
